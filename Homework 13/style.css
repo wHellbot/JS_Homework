@@ -1,0 +1,45 @@
+table {
+    margin: 0 auto;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    width: 200px;
+    border: solid 1px black;
+}
+
+.button_row {
+    text-align: center;
+}
+
+.text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently*/
+}
+
+#tbody_table .add_input {
+    background: red;
+}
+
+#tbody_table .highlight2 {
+    background: yellow;
+}
+
+#tbody_table .all_input {
+    background: yellow;
+}
+
+#all_table p {
+    padding: 20px;
+    margin: 0;
+}
+
