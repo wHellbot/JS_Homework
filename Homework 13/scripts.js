@@ -23,24 +23,36 @@ function add_row() {
 tableTbody.onclick = function (event) {
     var target = event.target;
     if (target.tagName === 'TD') {
+        var newInput = document.createElement('input');
         var textPre = target.textContent;
-        addInput(target);
-        var input = target.getElementsByTagName('input');
-        input.value = textPre;
 
-// и тут я в конец запутался)
-        target.onblur = function() {
-            var inputValue = input.value;
-            target.textContent = inputValue;
-        };
+        newInput.innerHTML ='<input id="myInp"  type="text">';
+
+        newInput.value = textPre;
+
+        newInput.onblur = function(){
+            var val =  newInput.value;
+
+            target.removeChild(newInput);
+
+            var aldInput = document.createElement('p');
+            aldInput.innerHTML ='<p></p>';
+            aldInput.textContent = val;
+
+            target.appendChild(aldInput);
+        }
+
+        if (textPre) {
+            var spanS = target.firstChild;
+
+            target.replaceChild(newInput, spanS);
+            newInput.focus();
+        } else {
+            target.appendChild(newInput);
+            newInput.focus();
+        }
     }
 }
 
-
-function addInput(node) {
-    var newInput = document.createElement('p');
-    newInput.innerHTML ='<input  type="text" autofocus>';
-    node.appendChild(newInput);
-}
 
 

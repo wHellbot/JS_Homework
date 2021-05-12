@@ -6,12 +6,16 @@ table {
 }
 
 tr {
-    height: 50px;
+    height: 80px;
 }
 
 td {
     width: 200px;
+    max-width: 200px;
+    min-width: 150px;
     border: solid 1px black;
+    position: relative;
+    text-align: center;
 }
 
 .button_row {
@@ -39,7 +43,15 @@ td {
 }
 
 #all_table p {
-    padding: 20px;
+    padding: 0;
     margin: 0;
+    min-width: 10px;
+    max-width: 190px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
