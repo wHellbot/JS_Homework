@@ -4,7 +4,7 @@ var ButtonAddRow = tableAll.lastElementChild;
 
 ButtonAddRow.onclick = function(event) {
     var target = event.target;
-        if (target.tagName === 'TD') {
+        if (target.tagName === 'TD' || target.tagName === 'STRONG') {
             add_row();
         }
 }
