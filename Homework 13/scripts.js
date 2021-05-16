@@ -14,15 +14,15 @@ function add_row() {
     var theFirstChild = parentElement.firstChild;
     var newTr = document.createElement('tr');
     newTr.innerHTML =
-        '<td class="all_td"></td>' +
-        '<td class="all_td"></td>' +
-        '<td class="all_td"></td>';
+        '<td></td>' +
+        '<td></td>' +
+        '<td></td>';
     parentElement.insertBefore(newTr, theFirstChild);
 }
 
 tableTbody.onclick = function (event) {
     var target = event.target;
-    if (target.tagName === 'TD') {
+    if (target.tagName === 'TD' || target.tagName === 'P') {
         var newInput = document.createElement('input');
         var textPre = target.textContent;
 
@@ -36,7 +36,7 @@ tableTbody.onclick = function (event) {
             target.removeChild(newInput);
 
             var aldInput = document.createElement('p');
-            aldInput.innerHTML ='<p></p>';
+            aldInput.innerHTML ='<p class="text"></p>';
             aldInput.textContent = val;
 
             target.appendChild(aldInput);

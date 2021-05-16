@@ -30,18 +30,6 @@ td {
     user-select: none;           /* Non-prefixed version, currently*/
 }
 
-#tbody_table .add_input {
-    background: red;
-}
-
-#tbody_table .highlight2 {
-    background: yellow;
-}
-
-#tbody_table .all_input {
-    background: yellow;
-}
-
 #all_table p {
     padding: 0;
     margin: 0;
