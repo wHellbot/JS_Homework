@@ -1,0 +1,33 @@
+table {
+    margin: 0 auto;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    height: 40px;
+}
+
+td {
+    width: 40px;
+    border: solid 1px black;
+}
+.input_one,
+.input_two,
+.btn {
+    padding: 10px;
+}
+
+button {
+    padding: 5px;
+}
+
+input {
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.black {
+    background-color: black;
+}
