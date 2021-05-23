@@ -6,7 +6,6 @@ var body = document.getElementById('body');
 var newTable = document.createElement('table');
 
 
-
 function inputX() {
     buttonCreate.disabled = true;
     disButton();
@@ -25,21 +24,22 @@ function disButton() {
 
 buttonCreate.onclick = function (event) {
     var oldTable = body.lastChild;
+    newTable.innerHTML = '<table id="tb"></table>';
 
     if (oldTable) {
         body.replaceChild(newTable, oldTable);
     } else {
-        newTable.innerHTML = '<table id="tb"></table>';
         body.appendChild(newTable);
     }
 
-    if (10 >= y.value > 0 && +y.value > 0 && y.value % 1 === 0) {
+    if (10 >= y.value > 0 && +y.value > 0 && y.value % 1 === 0 &&
+        10 >= x.value > 0 && +x.value > 0 && x.value % 1 === 0) {
         for (var i = 1; i <= y.value; i++) {
-            var newTd = document.createElement('tr');
-            newTd.innerHTML = '<td></td>';
-            newTable.appendChild(newTd);
+            var newTr = document.createElement('tr');
+            newTr.innerHTML = '<td></td>';
+            newTable.appendChild(newTr);
         }
-    } else {
+    } else if (10 <= y.value > 0 || +y.value < 0  || y.value % 1 !== 0) {
         alert('Введите корректное значение в поле Y - целое число от 1 до 10.');
         y.value = '';
         buttonCreate.disabled = true;
@@ -48,10 +48,10 @@ buttonCreate.onclick = function (event) {
     if (10 >= x.value > 0 && +x.value > 0 && x.value % 1 === 0) {
         var allTd = newTable.children;
         for (var k = 0; k < x.value - 1; k++) {
-            for (var i = 0; i < y.value; i++) {
-                var newTr = document.createElement('td');
-                newTr.innerHTML = '<td></td>';
-                allTd[i].appendChild(newTr);
+            for (var l = 0; i < y.value; l++) {
+                var newTd = document.createElement('td');
+                newTd.innerHTML = '<td></td>';
+                allTd[l].appendChild(newTd);
             }
         }
     } else {
@@ -59,8 +59,7 @@ buttonCreate.onclick = function (event) {
         x.value = '';
         buttonCreate.disabled = true;
     }
-    y.value = '';
-    x.value = '';
+
     buttonCreate.disabled = true;
 
     var fullTable = newTable.children;
