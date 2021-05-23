@@ -28,11 +28,11 @@ secondPar.onclick = function(event) {
     var target = event.target;
     if (target.tagName === 'A') {
         if (localStorage.length === 0 || localStorage.key(target.innerText) !== target.innerText) {
-            localStorage.setItem(target.innerText.toString(), JSON.stringify({ path: target.href }));
+            localStorage.setItem(target.innerText, JSON.stringify({ path: target.href }));
             alert('Сохранили информацию об этой ссылке в LS');
             target.href = '#';
         } else if (localStorage.key(target.innerText) === target.innerText) {
-            alert (JSON.parse(localStorage.getItem(target.innerText.toString())).path);
+            alert (JSON.parse(localStorage.getItem(target.innerText)).path);
         }
         return false;
     }
