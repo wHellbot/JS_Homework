@@ -48,7 +48,7 @@ buttonCreate.onclick = function (event) {
     if (10 >= x.value > 0 && +x.value > 0 && x.value % 1 === 0) {
         var allTd = newTable.children;
         for (var k = 0; k < x.value - 1; k++) {
-            for (var l = 0; i < y.value; l++) {
+            for (var l = 0; l < y.value; l++) {
                 var newTd = document.createElement('td');
                 newTd.innerHTML = '<td></td>';
                 allTd[l].appendChild(newTd);
